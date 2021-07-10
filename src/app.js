@@ -3,8 +3,12 @@ const Note = require('./models/note');
 document.addEventListener('DOMContentLoaded', function() {
     
     const handleShowForm = function() {
-        this.classList.toggle("active");
-        const content = this.nextElementSibling;
+        toggleButton(this);
+    }
+
+    const toggleButton = function(e) {
+        e.classList.toggle("active");
+        const content = e.nextElementSibling;
         if (content.style.display === "block") {
             content.style.display = "none";
         } else {
@@ -42,6 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
         note.classList.add(h4);
         note.classList.add('all');
         console.log(note);
+    }
+
+    const handleShowFiltersClick = function() {
+        toggleButton(this);
     }
 
     const handleGeneralClick = function() {
@@ -102,6 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const deleteButton = document.querySelector('#delete-button');
     deleteButton.addEventListener('click', handleDeleteClick);
+
+    const showFiltersButton = document.querySelector('#show-filters');
+    showFiltersButton.addEventListener('click', handleShowFiltersClick);
 
     const toggleGeneralButton = document.querySelector('#general');
     toggleGeneralButton.addEventListener('click', handleGeneralClick);
