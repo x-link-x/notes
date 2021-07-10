@@ -20,7 +20,7 @@
                         <option value="">--Please choose a category--</option>
                         <option value="miscellaneous">Miscellaneous</option>
                         <option value="school">School</option>
-                        <option value="coding project">Coding Project</option>
+                        <option value="coding">Coding</option>
                         <option value="recipes">Recipes</option>
                     </select>
                 </div>
@@ -42,11 +42,16 @@
     </div>
 
     <div id="delete">
-        <button value="delete">Delete All Notes</button>
+        <button id="delete-button" value="delete">Delete All Notes</button>
     </div>
 
     <div id="notes">
-        <div id="sort-notes"></div>
+        <div id="sort-notes">
+            <button id="misc" value="misc">Show Miscellaneous</button>
+            <button id="school" value="school">Show School</button>
+            <button id="coding" value="coding">Show Coding</button>
+            <button id="recipes" value="recipes">Show Recipes</button>
+        </div>
 
         <ul id="notes-list"></ul>
     </div>

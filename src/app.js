@@ -10,6 +10,29 @@ document.addEventListener('DOMContentLoaded', function() {
         form.reset();
     }
 
+    const handleDeleteClick = function() {
+        const notes = document.querySelector('#notes-list');
+        notes.innerHTML = "";
+    }
+
+    const handleMiscClick = function() {
+        const notes = document.querySelectorAll('li');
+        for (note of notes) {
+            addCategoryToClasslist(note);
+            if (note.classList.contains('miscellaneous')) {
+                note.style.display = "block";
+            } else {
+                note.style.display = "none";
+            }
+        }
+    }
+
+    const addCategoryToClasslist = function(note) {
+        const h4 = note.querySelector('h4').textContent;
+        note.classList.add(h4);
+        console.log(note);
+    }
+
     const formatDate = function(date) {
         const day = date.getDate();
         const month = date.getMonth() + 1;
@@ -31,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const createNoteObject = function (date, category, content, important) {
         const dateInfo = document.createElement('h3');
         dateInfo.textContent = date;
-        const categoryInfo = document.createElement('p');
+        const categoryInfo = document.createElement('h4');
         categoryInfo.textContent = category;
         const contentInfo = document.createElement('p');
         contentInfo.textContent = content;
@@ -42,5 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const form = document.querySelector('#add-note-form');
     form.addEventListener('submit', handleFormSubmit);
+
+    const deleteButton = document.querySelector('#delete-button');
+    deleteButton.addEventListener('click', handleDeleteClick);
+
+    const showMiscButton = document.querySelector('#misc');
+    showMiscButton.addEventListener('click', handleMiscClick);
+
+    
 
 });

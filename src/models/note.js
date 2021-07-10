@@ -1,8 +1,7 @@
-const Note = function (date, category, content, important=false) {
+const Note = function (date, category, content) {
     this.date = date;
     this.category = category;
     this.content = content;
-    this.important = important;
 }
 
 Note.prototype.getContent = function() {
