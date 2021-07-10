@@ -10,7 +10,9 @@ The app allows a user to add notes, filter notes by category, and delete all not
 
 - Clone down the repo
 
-- $ npm install
+```
+npm install
+```
 
 - Open /Users/user/notes/public/index.html in your browser
 
