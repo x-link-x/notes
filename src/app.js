@@ -21,15 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const notes = document.querySelector('#notes-list');
         const newNote = createNote(e.target);
         notes.appendChild(newNote);
+        let deleteButton = document.querySelector('#delete-button');
+        deleteButton.style.display = "block"
         form.reset();
+        toggleButton(showFormButton);
+        
     }
 
     const handleDeleteClick = function() {
-        const notes = document.querySelector('#notes-list');
-        notes.innerHTML = "";
+        const notesList = document.querySelector('#notes-list');
+        notesList.innerHTML = "";
+        deleteButton.style.display = "none";
     }
 
-    const handleToggleClick = function (category) {
+    const handleFilterClick = function (category) {
         const notes = document.querySelectorAll('li');
         for (note of notes) {
             addCategoryToClasslist(note);
@@ -53,23 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const handleGeneralClick = function() {
-        handleToggleClick('general');
+        handleFilterClick('general');
     }
 
     const handleToDoClick = function() {
-        handleToggleClick('to-do');
+        handleFilterClick('to-do');
     }
 
     const handleMeetingsClick = function() {
-        handleToggleClick('meetings');
+        handleFilterClick('meetings');
     }
 
     const handleRemindersClick = function() {
-        handleToggleClick('reminders');
+        handleFilterClick('reminders');
     }
 
     const handleAllNotesClick = function() {
-        handleToggleClick('all');
+        handleFilterClick('all');
     }
     
     const formatDate = function(date) {

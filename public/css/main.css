@@ -1,24 +1,9 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    text-align: center;
     background-color: rgb(228, 247, 253);
     margin: 0 auto;
 }
-
-
-/* .collapsible {
-    background-color: #eee;
-    font-size: 100%;
-    padding: 10px;
-    margin: 10px;
-    box-sizing: border-box;
-    text-align: left;  
-  } */
-  
-/* .active, .collapsible:hover {
-    background-color: #ccc;
-} */
-  
+ 
 .content {
     padding: 0 18px;
     display: none;
@@ -38,4 +23,8 @@ input, select, button {
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
+}
+
+#delete-button {
+    display: none;
 }
