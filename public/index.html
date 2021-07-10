@@ -9,6 +9,9 @@
     <script src="js/bundle.js"></script> 
 </head>
 <body>
+    <header>
+        <h1>Welcome to Notes</h1>
+    </header>
     <div id="form">
         <button type="button" class="collapsible" id="show-form">add a note</button>
         <div class="content">
@@ -36,19 +39,23 @@
         </div>
     </div>
 
-    <div id="notes">
-        <div id="sort-notes">
-            <button type="button" class="collapsible" id="show-filters">filter notes</button>
-            <div class="content">
-                <button id="general" value="general">show general</button>
-                <button id="to-do" value="school">show to-do</button>
-                <button id="meetings" value="meetings">show meetings</button>
-                <button id="reminders" value="reminders">show reminders</button>
-                <button id="all" value="all">show all</button>
-            </div>
+    <div id="sort-notes">
+        <button type="button" class="collapsible" id="show-filters">filter notes</button>
+        <div class="content">
+            <button id="general" value="general">show general</button>
+            <button id="to-do" value="school">show to-do</button>
+            <button id="meetings" value="meetings">show meetings</button>
+            <button id="reminders" value="reminders">show reminders</button>
+            <button id="all" value="all">show all</button>
         </div>
-
+    </div>
+    
+    <div id="notes">
         <ul id="notes-list"></ul>
+    </div>
+
+    <div id="image">
+        <img src="css/note.webp" alt="A yellow notepad" id="note-img">
     </div>
 
     <div id="delete">

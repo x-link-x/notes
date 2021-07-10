@@ -3,6 +3,11 @@ body {
     background-color: rgb(228, 247, 253);
     margin: 0 auto;
 }
+
+header {
+    padding: 10px;
+    padding-left: 40px;
+}
  
 .content {
     padding: 0 18px;
@@ -11,7 +16,6 @@ body {
 }
 
 li {
-    
     list-style: none;
     width: 97%;
     border-bottom: solid black 1px;
@@ -27,4 +31,15 @@ input, select, button {
 
 #delete-button {
     display: none;
+}
+
+#note-img {
+    float:right;
+    position: relative;
+    right: 200px;
+    top: -50px;
+}
+
+#sort-notes, #form, #delete {
+    padding-left: 30px;
 }

@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const handleShowForm = function() {
         toggleButton(this);
+        const noteImg = document.querySelector('img');
+        noteImg.style.display = "none";
     }
 
     const toggleButton = function(e) {
@@ -21,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const notes = document.querySelector('#notes-list');
         const newNote = createNote(e.target);
         notes.appendChild(newNote);
-        let deleteButton = document.querySelector('#delete-button');
-        deleteButton.style.display = "block"
+        const deleteButton = document.querySelector('#delete-button');
+        deleteButton.style.display = "block";
         form.reset();
         toggleButton(showFormButton); 
     }
@@ -31,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const notesList = document.querySelector('#notes-list');
         notesList.innerHTML = "";
         deleteButton.style.display = "none";
+        const noteImg = document.querySelector('img');
+        noteImg.style.display = "block";
     }
 
     const handleFilterClick = function (category) {
