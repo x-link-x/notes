@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const addCategoryToClasslist = function(note) {
         const h4 = note.querySelector('h4').textContent;
         note.classList.add(h4);
+        note.classList.add('all');
         console.log(note);
     }
 
@@ -37,6 +38,22 @@ document.addEventListener('DOMContentLoaded', function() {
         handleToggleClick('general');
     }
 
+    const handleToDoClick = function() {
+        handleToggleClick('to-do');
+    }
+
+    const handleMeetingsClick = function() {
+        handleToggleClick('meetings');
+    }
+
+    const handleRemindersClick = function() {
+        handleToggleClick('reminders');
+    }
+
+    const handleAllNotesClick = function() {
+        handleToggleClick('all');
+    }
+    
     const formatDate = function(date) {
         const day = date.getDate();
         const month = date.getMonth() + 1;
@@ -85,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleRemindersButton = document.querySelector('#reminders');
     toggleRemindersButton.addEventListener('click', handleRemindersClick);
 
-    
+    const showAllButton = document.querySelector('#all');
+    showAllButton.addEventListener('click', handleAllNotesClick);
 
 });
