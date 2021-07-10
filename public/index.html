@@ -16,17 +16,22 @@
             <form id="add-note-form">
                 <div class="form-item">
                     <label for="category_select"></label>
-                    <select name="categories" id="category-select">
+                    <select name="categories" id="category_select">
                         <option value="">--Please choose a category--</option>
-                        <option value="misc">Miscellaneous</option>
+                        <option value="miscellaneous">Miscellaneous</option>
                         <option value="school">School</option>
-                        <option value="coding-project">Coding Project</option>
+                        <option value="coding project">Coding Project</option>
                         <option value="recipes">Recipes</option>
                     </select>
                 </div>
                 <div class="form-item">
                     <label for="content"></label>
                     <textarea name="note" id="content" form="add-note-form" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <input type="hidden" name="important" value="false">
+                    <input type="checkbox" name="important" value="true">
+                    <label for="important">Important</label>
                 </div>
                 <div class="form-item">
                     <input type="submit", value="Add note">

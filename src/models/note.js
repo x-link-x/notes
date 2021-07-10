@@ -9,6 +9,7 @@ Note.prototype.getDate = function() {
     return this.date;
 }
 
+
 Note.prototype.getContent = function() {
     return this.content;
 }
