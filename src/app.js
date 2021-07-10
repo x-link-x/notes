@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let deleteButton = document.querySelector('#delete-button');
         deleteButton.style.display = "block"
         form.reset();
-        toggleButton(showFormButton);
-        
+        toggleButton(showFormButton); 
     }
 
     const handleDeleteClick = function() {
@@ -133,5 +132,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const showAllButton = document.querySelector('#all');
     showAllButton.addEventListener('click', handleAllNotesClick);
-
 });
