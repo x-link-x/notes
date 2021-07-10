@@ -2,6 +2,16 @@ const Note = require('./models/note');
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    const handleShowForm = function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        } 
+    }
+    
     const handleFormSubmit = function(e) {
         e.preventDefault();
         const notes = document.querySelector('#notes-list');
@@ -83,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
         noteObject.setCategoryColor();
         return noteObject;
     };
+
+    const showFormButton = document.querySelector('#show-form');
+    showFormButton.addEventListener('click', handleShowForm);
     
     const form = document.querySelector('#add-note-form');
     form.addEventListener('submit', handleFormSubmit);
