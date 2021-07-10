@@ -10,17 +10,8 @@ Note.prototype.getContent = function() {
 }
 
 Note.prototype.setCategoryColor = function() {
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    const randomColor = Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
     this.category.style.color = "#" + randomColor;
 }
-
-Note.prototype.formatDate = function(date) {
-        const day = date.getDate();
-        const month = date.getMonth() + 1;
-        const year = date.getFullYear();
-        return `${day}/${month}/${year}`;
-}
-
-
 
 module.exports = Note;
