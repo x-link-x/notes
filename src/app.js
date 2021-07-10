@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const addCategoryToClasslist = function(note) {
-        const h4 = note.querySelector('h4').textContent;
-        note.classList.add(h4);
+        const category = note.querySelector('h4').textContent;
+        note.classList.add(category);
         note.classList.add('all');
         console.log(note);
     }
