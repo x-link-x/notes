@@ -10,31 +10,26 @@
 </head>
 <body>
     <div id="form">
-        <button type="button" class="collapsible">Add a note</button>
+        <button type="button" class="collapsible">add a note</button>
         <div class="content">
             
             <form id="add-note-form">
                 <div class="form-item">
                     <label for="category_select"></label>
                     <select name="categories" id="category_select">
-                        <option value="">--Please choose a category--</option>
-                        <option value="miscellaneous">Miscellaneous</option>
-                        <option value="school">School</option>
-                        <option value="coding">Coding</option>
-                        <option value="recipes">Recipes</option>
+                        <option value="">--please choose a category--</option>
+                        <option value="general">general</option>
+                        <option value="to-do">to-do</option>
+                        <option value="meetings">meetings</option>
+                        <option value="reminders">reminders</option>
                     </select>
                 </div>
                 <div class="form-item">
                     <label for="content"></label>
                     <textarea name="note" id="content" form="add-note-form" cols="30" rows="10"></textarea>
                 </div>
-                <div>
-                    <input type="hidden" name="important" value="false">
-                    <input type="checkbox" name="important" value="true">
-                    <label for="important">Important</label>
-                </div>
                 <div class="form-item">
-                    <input type="submit", value="Add note">
+                    <input type="submit", value="add note">
                 </div>
             </form>
               
@@ -42,15 +37,15 @@
     </div>
 
     <div id="delete">
-        <button id="delete-button" value="delete">Delete All Notes</button>
+        <button id="delete-button" value="delete">delete all notes</button>
     </div>
 
     <div id="notes">
         <div id="sort-notes">
-            <button id="misc" value="misc">Show Miscellaneous</button>
-            <button id="school" value="school">Show School</button>
-            <button id="coding" value="coding">Show Coding</button>
-            <button id="recipes" value="recipes">Show Recipes</button>
+            <button id="general" value="general">show general</button>
+            <button id="to-do" value="school">show to-do</button>
+            <button id="meetings" value="meetings">show meetings</button>
+            <button id="reminders" value="reminders">show reminders</button>
         </div>
 
         <ul id="notes-list"></ul>

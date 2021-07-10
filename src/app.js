@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         notes.innerHTML = "";
     }
 
-    const handleMiscClick = function() {
+    const handleToggleClick = function (category) {
         const notes = document.querySelectorAll('li');
         for (note of notes) {
             addCategoryToClasslist(note);
-            if (note.classList.contains('miscellaneous')) {
+            if (note.classList.contains(`${category}`)) {
                 note.style.display = "block";
             } else {
                 note.style.display = "none";
@@ -33,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(note);
     }
 
+    const handleGeneralClick = function() {
+        handleToggleClick('general');
+    }
+
     const formatDate = function(date) {
         const day = date.getDate();
         const month = date.getMonth() + 1;
@@ -44,21 +48,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const note = document.createElement('li');
         const dateNow = new Date();
         const date = formatDate(dateNow);
-        const noteObject = createNoteObject(date, form.category_select.value, form.content.value, form.important.value);
+        const noteObject = createNoteObject(date, form.category_select.value, form.content.value);
         note.appendChild(noteObject.date);
         note.appendChild(noteObject.content);
         note.appendChild(noteObject.category);
         return note
     }
 
-    const createNoteObject = function (date, category, content, important) {
+    const createNoteObject = function (date, category, content) {
         const dateInfo = document.createElement('h3');
         dateInfo.textContent = date;
         const categoryInfo = document.createElement('h4');
         categoryInfo.textContent = category;
         const contentInfo = document.createElement('p');
         contentInfo.textContent = content;
-        const noteObject = new Note(dateInfo, categoryInfo, contentInfo, important);
+        const noteObject = new Note(dateInfo, categoryInfo, contentInfo);
         noteObject.setCategoryColor();
         return noteObject;
     };
@@ -69,8 +73,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const deleteButton = document.querySelector('#delete-button');
     deleteButton.addEventListener('click', handleDeleteClick);
 
-    const showMiscButton = document.querySelector('#misc');
-    showMiscButton.addEventListener('click', handleMiscClick);
+    const toggleGeneralButton = document.querySelector('#general');
+    toggleGeneralButton.addEventListener('click', handleGeneralClick);
+
+    const toggleToDoButton = document.querySelector('#to-do');
+    toggleToDoButton.addEventListener('click', handleToDoClick);
+
+    const toggleMeetingsButton = document.querySelector('#meetings');
+    toggleMeetingsButton.addEventListener('click', handleMeetingsClick);
+
+    const toggleRemindersButton = document.querySelector('#reminders');
+    toggleRemindersButton.addEventListener('click', handleRemindersClick);
 
     
 
