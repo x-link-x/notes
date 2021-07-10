@@ -12,8 +12,34 @@
     <div id="form">
         <button type="button" class="collapsible">Add a note</button>
         <div class="content">
-            <p>Form here</p>
+            
+            <form id="add-note-form">
+                <div class="form-item">
+                    <label for="category_select"></label>
+                    <select name="categories" id="category-select">
+                        <option value="">--Please choose a category--</option>
+                        <option value="misc">Miscellaneous</option>
+                        <option value="school">School</option>
+                        <option value="coding-project">Coding Project</option>
+                        <option value="recipes">Recipes</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="content"></label>
+                    <textarea name="note" id="content" form="add-note-form" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-item">
+                    <input type="submit", value="Add note">
+                </div>
+            </form>
+              
         </div>
+    </div>
+
+    <div id="notes">
+        <div id="sort-notes"></div>
+
+        <ul id="notes-list"></ul>
     </div>
     
 </body>
