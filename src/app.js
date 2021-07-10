@@ -1,11 +1,6 @@
 const Note = require('./models/note');
 
 document.addEventListener('DOMContentLoaded', function() {
-
-    const setCategoryColor = function(category) {
-        const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        category.style.color = "#" + randomColor;
-    }
     
     const handleFormSubmit = function(e) {
         e.preventDefault();
@@ -15,19 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
         form.reset();
     }
 
-    const formatDate = function(date) {
-        const day = date.getDate();
-        const month = date.getMonth() + 1;
-        const year = date.getFullYear();
-        return `${day}/${month}/${year}`;
-    }
+    // const formatDate = function(date) {
+    //     const day = date.getDate();
+    //     const month = date.getMonth() + 1;
+    //     const year = date.getFullYear();
+    //     return `${day}/${month}/${year}`;
+    // }
 
     const createNote = function(form) {
         const note = document.createElement('li');
         const dateNow = new Date();
-        const date = formatDate(dateNow);
-        const noteObject = createNoteObject(date, form.category_select.value, form.content.value, form.important.value);
-        note.appendChild(noteObject.date);
+        // const date = formatDate(dateNow);
+        const noteObject = createNoteObject(dateNow, form.category_select.value, form.content.value, form.important.value);
+        note.appendChild(noteObject.formatDate(dateNow)); // changed
         note.appendChild(noteObject.content);
         note.appendChild(noteObject.category);
         return note
@@ -39,10 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const categoryInfo = document.createElement('p');
         categoryInfo.textContent = category;
         categoryInfo.classList.add('category');
-        setCategoryColor(categoryInfo);
         const contentInfo = document.createElement('p');
         contentInfo.textContent = content;
         const note = new Note(dateInfo, categoryInfo, contentInfo, important);
+        
+        note.setCategoryColor();
         return note;
     };
     
